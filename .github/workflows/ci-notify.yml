@@ -1,0 +1,13 @@
+on:
+  check_run:
+    types: [completed]
+  check_suite:
+    types: [completed]
+  status:
+
+jobs:
+  notify:
+    runs-on: ubuntu:latest
+    steps:
+      - name: Debug event
+        uses: hmarr/debug-action
