@@ -3,11 +3,11 @@ on:
     types: [completed]
   check_suite:
     types: [completed]
-  status:
+  status: {}
 
 jobs:
   notify:
     runs-on: ubuntu:latest
     steps:
       - name: Debug event
-        uses: hmarr/debug-action@v1.0.0
+        run: echo ${{ github.event }}
